@@ -1,9 +1,17 @@
 <template>
   <header>
-    <nav class="container flex aling-center">
-      <img src="@/assets/img/dc-logo.png" alt="" />
+    <nav class="container flex">
+      <img :src="logo" alt="Logo" />
       <ul class="flex align-center">
-        <li v-for="(link, index) in links" :key="index">
+        <li
+          @click="selectedIndex = index"
+          v-for="(link, index) in links"
+          :key="index"
+          class="flex align-center"
+          :class="{
+            selected: index == selectedIndex,
+          }"
+        >
           <a href="link.href">{{ link.text }}</a>
         </li>
       </ul>
@@ -12,10 +20,14 @@
 </template>
 
 <script>
+import logo from "@/assets/img/dc-logo.png";
+
 export default {
   name: "HeaderDc",
   data() {
     return {
+      logo,
+      selectedIndex: 0,
       links: [
         {
           href: "#",
@@ -64,16 +76,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/partials/variables";
+
+header {
+  background-color: white;
+  color: black;
+}
+
+img {
+  margin: 1.3em 0;
+  height: 80px;
+}
+
 ul {
   list-style: none;
   margin-left: auto;
 
   li {
     text-transform: uppercase;
-    display: inline-block;
+    font-size: 0.9rem;
+
+    height: 100%;
+
+    $border: 5px solid transparent;
+    border-bottom: $border;
+    border-top: $border;
 
     & + li {
-      margin-left: 0.5em;
+      margin-left: 1ch;
+    }
+
+    &.selected {
+      border-bottom-color: $blue_color;
     }
   }
 }

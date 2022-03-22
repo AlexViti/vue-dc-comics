@@ -1,5 +1,6 @@
 html {
 	font-family: sans-serif;
+	color: white;
 }
 
 .container {
@@ -12,5 +13,13 @@ html {
 
 	&.align-center {
 		align-items: center;
+	}
+
+	&.column {
+		flex-direction: column;
+	}
+
+	&.justify-center {
+		justify-content: center;
 	}
 }
