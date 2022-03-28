@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 html {
-	font-family: sans-serif;
+	font-family: 'Roboto', sans-serif;
 	color: white;
 }
 
@@ -21,5 +23,15 @@ html {
 
 	&.justify-center {
 		justify-content: center;
+	}
+
+	&.justify-between {
+		justify-content: space-between;
+	}
+}
+
+nav {
+	ul {
+		list-style: none;
 	}
 }

@@ -4,7 +4,7 @@
       <img :src="logo" alt="Logo" />
       <ul class="flex align-center">
         <li
-          @click="selectedIndex = index"
+          @click.prevent="selectedIndex = index"
           v-for="(link, index) in links"
           :key="index"
           class="flex align-center"
@@ -89,12 +89,12 @@ img {
 }
 
 ul {
-  list-style: none;
   margin-left: auto;
 
   li {
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 500;
 
     height: 100%;
 
@@ -103,7 +103,7 @@ ul {
     border-top: $border;
 
     & + li {
-      margin-left: 1ch;
+      margin-left: 2ch;
     }
 
     &.selected {
