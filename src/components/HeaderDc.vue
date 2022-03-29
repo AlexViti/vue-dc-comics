@@ -93,7 +93,7 @@ ul {
 
   li {
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 500;
 
     height: 100%;

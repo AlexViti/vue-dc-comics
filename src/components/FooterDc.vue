@@ -9,7 +9,6 @@
           </li>
         </ul>
       </nav>
-      <img :src="dcLogoBg" alt="" />
     </div>
   </footer>
 </template>
@@ -65,5 +64,9 @@ export default {
 <style lang="scss" scoped>
 footer {
   background: url("~@/assets/img/footer-bg.jpg") no-repeat top/cover;
+
+  .container {
+    background: url("~@/assets/img/dc-logo-bg.png") no-repeat right/50%;
+  }
 }
 </style>
